@@ -28,6 +28,21 @@ public class BankAccount {
         this.customer = customer;
     }
 
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public long getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(long accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     public void deposit(double amount)
     {
@@ -43,10 +58,11 @@ public class BankAccount {
 
     }
 
-      public double getBalance()
+    public double getBalance()
     {
         return amount;
     }
+
     public void transfer(double amount, BankAccount targetAccount)
     {
         this.withdraw(amount);

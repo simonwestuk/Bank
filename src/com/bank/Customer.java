@@ -6,7 +6,7 @@ public class Customer extends Person {
 
     private Integer customerID;
     private static int numberOfCustomers = 1000;
-    private static HashMap<Integer, Customer> customers = new HashMap<Integer, Customer>();
+    private static HashMap<Integer, Customer> customers = new HashMap<>();
 
     public Customer(String name, Date dob) {
         super(name, dob);
@@ -40,12 +40,7 @@ public class Customer extends Person {
 
     public static Customer findCustomer(Integer customerID)
     {
-        if (customers.containsKey(customerID)) {
-            return customers.get(customerID);
-        }
-        else {
-            return null;
-        }
+        return customers.getOrDefault(customerID, null);
     }
 
     @Override

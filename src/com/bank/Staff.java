@@ -7,7 +7,7 @@ public class Staff extends Person {
     private Integer staffID;
     private static int numberOfStaff = 1000;
     private Role role;
-    private static HashMap<Integer, Staff> staffs = new HashMap<Integer, Staff>();
+    private static HashMap<Integer, Staff> staffs = new HashMap<>();
 
     public Staff(String name, Date dob, Role role) {
         super(name, dob);
@@ -51,13 +51,7 @@ public class Staff extends Person {
 
     public static Staff findStaff(Integer staffID)
     {
-        if (staffs.containsKey(staffID)) {
-            return staffs.get(staffID);
-        }
-        else
-        {
-            return null;
-        }
+        return staffs.getOrDefault(staffID, null);
     }
 
     @Override
