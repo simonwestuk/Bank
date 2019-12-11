@@ -7,7 +7,7 @@ public abstract class  Person {
     private String name;
     private Date dob;
 
-    public Person(String name, Date dob) {
+    protected Person(String name, Date dob) {
         this.name = name;
         this.dob = dob;
     }

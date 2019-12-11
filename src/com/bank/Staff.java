@@ -1,20 +1,21 @@
 package com.bank;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Staff extends Person {
 
-    private int staffID;
+    private Integer staffID;
     private static int numberOfStaff = 1000;
     private Role role;
-    private static ArrayList<Staff> staffs = new ArrayList<Staff>();
+    private static HashMap<Integer, Staff> staffs = new HashMap<Integer, Staff>();
 
     public Staff(String name, Date dob, Role role) {
         super(name, dob);
         this.role = role;
         this.staffID = numberOfStaff;
         numberOfStaff++;
-        staffs.add(this);
+        staffs.put(this.staffID, this);
+
     }
 
     public Role getRole() {
@@ -25,27 +26,39 @@ public class Staff extends Person {
         this.role = role;
     }
 
-    public int getCustomerID() {
+    public int getStaffID() {
         return staffID;
     }
 
-    public void setCustomerID(int customerID) {
-        this.staffID = customerID;
+    public void setStaffID(int staffID) {
+        this.staffID = staffID;
     }
 
-    public static int getNumberOfCustomers() {
+    public static int getNumberOfStaff() {
         return numberOfStaff;
     }
 
-    public static ArrayList<Staff> getStaff() {
+    public static HashMap<Integer, Staff> getStaff() {
         return staffs;
     }
 
     public static void removeStaff(Staff staff)
     {
-        staffs.remove(staff);
+        if (staffs.containsValue(staff)) {
+            staffs.remove(staff);
+        }
     }
 
+    public static Staff findStaff(Integer staffID)
+    {
+        if (staffs.containsKey(staffID)) {
+            return staffs.get(staffID);
+        }
+        else
+        {
+            return null;
+        }
+    }
 
     @Override
     public String toString() {
