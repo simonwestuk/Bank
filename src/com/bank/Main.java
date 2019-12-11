@@ -10,7 +10,7 @@ public class Main {
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 
         Customer c1 = new Customer("Simon West", df.parse("30/07/1986"));
-        Staff s1 = new Staff("David", df.parse("30/06/1990"));
+        Staff s1 = new Staff("David", df.parse("30/06/1990"), Role.MANAGER);
         System.out.println(c1.toString());
         System.out.println(s1.toString());
 

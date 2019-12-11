@@ -1,16 +1,26 @@
 package com.bank;
+
 import java.util.Date;
 
 public class Staff extends Person {
 
     private int staffID;
     private static int numberOfStaff = 1000;
+    private Role role;
 
-
-    public Staff(String name, Date dob) {
+    public Staff(String name, Date dob, Role role) {
         super(name, dob);
+        this.role = role;
         this.staffID = numberOfStaff;
         numberOfStaff++;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public int getCustomerID() {
@@ -27,7 +37,7 @@ public class Staff extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + " Staff ID: " + staffID;
+        return super.toString() + " Staff ID: " + staffID + " Role: " + role.toString();
     }
 
 }

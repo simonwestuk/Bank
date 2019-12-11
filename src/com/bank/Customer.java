@@ -5,7 +5,7 @@ public class Customer extends Person {
 
     private int customerID;
     private static int numberOfCustomers = 1000;
-    private String type;
+
 
 
     public Customer(String name, Date dob) {
