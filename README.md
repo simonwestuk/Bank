@@ -1,2 +1,2 @@
 # Bank Project in Java
-##Simon West
+#Simon West
